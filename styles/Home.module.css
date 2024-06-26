@@ -1,145 +1,367 @@
+/* Base Styles */
 .container {
-  width: 100%;
-  max-width: 1440px;
   padding: 0 1rem;
+  max-width: 1300px;
   margin: 0 auto;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 2rem;
 }
 
-.gradientText0 {
-  background: -webkit-linear-gradient(#bfa3da, #84309c, #c735b0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media screen and (min-height: 819px) {
+  .container {
+    margin-bottom: 5rem;
+  }
 }
 
-.gradientText1 {
-  background: -webkit-linear-gradient(#a79af9, #7aa8d2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.main {
+  min-height: 75vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
 }
 
-.gradientText2 {
-  background: -webkit-linear-gradient(#bfa3da, #743f93);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.mainPreview {
+  min-height: 75vh;
+  padding-bottom: 60px;
 }
 
-.gradientText3 {
-  background: -webkit-linear-gradient(#c35ab1, #e9a8d9);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+.title a {
+  color: #f3edf0;
+  text-decoration: none;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
   text-decoration: underline;
-  text-decoration-color: #84309c;
 }
 
 .title {
+  margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  color: #0ea5e9; 
 }
 
 .title,
 .description {
-  text-align: left;
-}
-
-.connect {
-  margin-bottom: 2rem;
+  text-align: center;
+  
 }
 
 .description {
-  margin-top: 2rem;
+  margin-top: 2rem; 
   margin-bottom: 2rem;
   line-height: 1.5;
   font-size: 1.5rem;
+  color: #fff; 
 }
 
 .code {
-  background: #555;
+  background: #242930; 
   border-radius: 5px;
-  padding: 0.5em;
+  padding: 1rem; 
   font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+  color: #0ea5e9; 
 }
 
 .grid {
   display: flex;
-  justify-content: left;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  max-width: 1200px;
 }
 
-.card {
-  background-color: #131313;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 440px;
-  overflow: none;
-  border: none;
-}
-
-.cardText {
-  padding: 1rem;
-}
-
-.card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 4px 4px 0 0;
-  margin-bottom: 12px;
-  border: none;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  background-color: #272c34;
-  opacity: 80%;
-}
-
-.card h2 {
-  margin: 0 0 0.75rem 0;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .header {
-    margin-left: 0;
-  }
+@media screen and (max-width: 480px) {
   .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-  .title {
-    font-size: 3rem;
-    line-height: 1.15;
+    justify-content: center;
   }
 }
 
-.card,
+/* Navbar Styles */
+.navbar {
+  background-color: #1b2129;  
+  padding: 12px; 
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-evenly; 
+  align-items: center;
+  border-radius: 15px;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center;
+  margin-right: 650px;
+}
+
+.navLinks a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navLinks a:hover {
+  color: #0ea5e9; 
+  transform: translateY(-1px);
+}
+
+.navbar a:hover {
+  color: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar {
+    flex-direction: row; 
+    text-align: center; 
+    width: 100%;
+  }
+
+  .navLinks {
+    margin-right: 0;
+    flex-direction: column; 
+  }
+
+  .navLinks a {
+    margin: 0.5rem 0; 
+  }
+}
+
+
+.heroSection {
+  background-color: #1b2129; 
+  color: #fff;
+  padding: 2rem; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 20px;
+}
+
+.name {
+  background-image: linear-gradient( 67.2deg,  rgba(37,208,199,1) -7.5%, rgba(165,90,240,1) 62.7% );
+  -webkit-background-clip: text;
+  color: transparent;
+  justify-content: center;
+  font-size: 23px; 
+  font-weight: bold; 
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.descriptionHead {
+  margin-bottom: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.descriptionHeader {
+  margin-bottom: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.reason {
+  color: #ea3d40;
+  margin-top: 4rem;
+}
+
+.walletConnected {
+  color: #ecf2f8; 
+  margin-top: 3rem;
+  font-weight: bold;
+  font-size: 13px; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  text-decoration: solid;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.collectionImage {
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1rem 0; 
+  max-width: 100%; 
+}
+
+.claimContainer {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-top: 3em; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.claimInput {
+  color: #fff;
+  padding: 10px 15px; 
+  border-radius: 7px; 
+  border: none;
+  margin: 0 10px;
+  width: 28%; 
+  background-color: #1b2129;
+  outline: none;
+  transition: background-color 0.3s;
+  font-size: 16px; 
+}
+
+.claimInput::placeholder {
+  color: #ccc;
+}
+
+
+.claimBtn {
+  background-color: #1b2129;
+  color: #fff;
+  padding: 5px 12px; 
+  border: none;
+  border-radius: 10px;
+  font-size: 22px; 
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.claimBtn:hover {
+  background-color: #262f39;
+}
+
+/* Focus effect */
+.claimInput:focus {
+  background-color: #444;
+}
+
+/* NFT Card Styles */
+.NFTCard {
+  background-color: #1b2129; 
+  color: #fff; 
+  padding: 2rem 1rem; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center; 
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  max-width: 100%; 
+  margin: 2%;
+
+}
+
+@media screen and (max-width: 767px) {
+  .NFTCard {
+    flex-direction: column; 
+    align-items: center;
+  }
+}
+
+/* styles/Footer.module.css */
+
 .footer {
-  border-color: #222;
+  background-color: #1b2129;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14px;
+  bottom: 0;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  max-width: 1300px;
+  width: 90%;
 }
-.logo img {
-  filter: invert(1);
+
+
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 10px; 
 }
+
+.socialLinks {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.socialLinks li {
+  margin-right: 80px;
+  margin-left: 20px;
+}
+
+.socialLinks a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+}
+
+.socialLinks a:hover {
+  color: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+.footerCopyright {
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 80px;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .socialLinks li {
+    margin-right: 8px ;
+  }
+  .footerCopyright {
+    margin-left: 8px;
+  }
+}
+
+
+.fixed-footer {
+  background-color: #1b2129;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  position: fixed; 
+  width: 100%; 
+}
+
